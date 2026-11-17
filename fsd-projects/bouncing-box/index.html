@@ -80,7 +80,7 @@
       var speed = 10;
       var speedY = 6;
       var misses = 0;
-      var maxMisses = 10;
+      var maxMisses = 5;
       var interval = setInterval(update, 50);
 
       function getRandomColor() {
@@ -94,7 +94,7 @@
         clearInterval(interval);
         box.off("click", handleBoxClick);
         board.off("click", handleBoardClick);
-        changeBoxText("X");
+        changeBoxText("You Lost!");
       }
 
       /**
