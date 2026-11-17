@@ -253,3 +253,122 @@ nav h1 {
   opacity: 1;
 }
 
+/* Bonus challenge: portfolio background and rounded navigation */
+.portfolio-page {
+  background-image:
+    linear-gradient(rgba(234, 232, 223, 0.88), rgba(234, 232, 223, 0.88)),
+    url("Gears.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Bonus challenge: third-page image gallery */
+.gallery-main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 24px;
+}
+
+.gallery-heading h1 {
+  margin: 0;
+  color: #000;
+  font-size: clamp(3rem, 8vw, 5rem);
+  text-transform: uppercase;
+}
+
+.gallery-heading p {
+  color: #666;
+  margin: 8px 0 0;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-gallery img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Bonus challenge: responsive layout */
+@media screen and (max-width: 1080px) {
+  #all-contents {
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  nav {
+    align-items: flex-start;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  #interests {
+    width: 100%;
+  }
+
+  .sidebar-img {
+    max-width: 540px;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #all-contents {
+    padding: 12px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #nav-ul {
+    flex-wrap: wrap;
+  }
+
+  .nav-li a {
+    display: block;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .image-gallery img {
+    height: 220px;
+  }
+
+  #portfolio a {
+    align-items: flex-start;
+  }
+}
+
